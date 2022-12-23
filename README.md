@@ -1,7 +1,7 @@
 # Model-free RL Baselines
 
 
-This codebase combines DrQ, AutoDrac, PPO into a single codebase
+This codebase combines DrQv2, PPO, and RFF-DrQ into a single codebase
 
  
 
@@ -9,11 +9,11 @@ This codebase combines DrQ, AutoDrac, PPO into a single codebase
 
 This repository contains implementations of the following papers in a unified framework:
 
-- [RAD (Laskin et al., 2020)](https://arxiv.org/abs/2004.14990)
-- [CURL (Srinivas et al., 2020)](https://arxiv.org/abs/2004.04136)
+- [PPO (Schulman et al., 2022)](https://arxiv.org/abs/1707.06347)
 - [SAC (Haarnoja et al., 2018)](https://arxiv.org/abs/1812.05905)
+- [DrQv2 (Yarats et al., 2022)](https://arxiv.org/abs/2107.09645)
 
-using standardized architecture and hyper-parameters, wherever applicable. 
+using standardized architecture and hyper-parameters, should attain SOTA.
 
 ## Setup
 
@@ -24,28 +24,32 @@ Each experiment will occupy one sub folder. ML-Logger will automatically log acc
 
 ## ML-Logger Env Setup
 
-1. Install `ml-logger==0.7.11`.
+1. Install `ml-logger`.
+   
+    ```bash
+    pip install ml-logger
+    ```
 
 2. Add the following environment variables to your `~/.bashrc`
 
    ```bash
-   export ML_LOGGER_ROOT=http://44.241.150.228:8080
+   export ML_LOGGER_ROOT=http://<your-server-ip>:8080
    export ML_LOGGER_USER=$USER
    export ML_LOGGER_TOKEN=
    ```
 
 ## Launching via SSH and Docker (on the VisionGPU Cluster)
 
-1. **Update `jaynes`** to `v0.6.15`. This one contains matching updates for this code base.
+1. **Update `jaynes`, `ml-logger`, and `params-proto` to the latest version.
 
    ```bash
-   pip install jaynes==0.6.10
+   pip install jaynes ml-logger params-proto
    ```
 
-2. add `NFS_PATH=/data/pulkitag/misc/$USER` to your `.bashrc` file. We use this parameter in the `.jaynes.config`.
+2. add `NFS_PATH=/data/whatever/misc/$USER` to your `.bashrc` file. We use this parameter in the `.jaynes.config`.
 
    ```bash
-   echo "export NFS_PATH=/data/pulkitag/misc/$USER" >> ~/.bashrc
+   echo "export NFS_PATH=/data/whatever/misc/$USER" >> ~/.bashrc
    ```
 
 3. Install `aws-cli` using the following command:
