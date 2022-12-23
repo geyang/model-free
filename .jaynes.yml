@@ -1,0 +1,357 @@
+version: 0
+mounts:
+  - &model-free_code
+    prefix: "s3://{env.JYNS_AWS_S3_BUCKET}/model-free"
+    local_path: .
+    pypath: true
+    excludes: >-
+      --exclude='*__pycache__' --exclude='*.git' --exclude='*.idea' --exclude='*.egg-info' --exclude='*.pkl'
+      --exclude='screenshots' --exclude='scripts' --exclude='docker' --exclude='*.png'
+      --exclude='private' --exclude='.secret'
+    compress: true
+runner: &docker-runner
+  name: "model-free"  # only for docker
+  image: "improbableailab/model-free:latest"
+  # post_script: sleep 1800
+  envs: "LANG=utf-8 ML_LOGGER_BUCKET=gs://ge-data-improbable ML_LOGGER_ROOT=http://44.241.150.228:8080 ML_LOGGER_USER=geyang"
+  startup: |
+    pip show gym-dmc gym
+  # pip install -U gym-dmc gym -q
+  pypath: "{mounts[0].container_path}"
+  work_dir: "{mounts[0].container_path}"
+  # startup: python -c "import torch; print(torch.cuda.current_device())";
+  ipc: host
+  gpus: all
+modes:
+  supercloud: &supercloud
+    mounts:
+      - !mounts.SSHCode
+        local_path: .
+        local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free.tar
+        host_path: "{env.JYNS_SLURM_DIR}/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
+        remote_tar: "{env.JYNS_SLURM_DIR}/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free.tar"
+        pypath: true
+        excludes: >-
+          --exclude='data' --exclude='samples' --exclude='images' --exclude='videos'
+          --exclude='figures' --exclude='results' --exclude='analysis' --exclude='*.ipynb'
+          --exclude='*__pycache__' --exclude='*.git' --exclude='*.png' --exclude='*.gif'
+          --exclude='*.mp4' --exclude='*.idea' --exclude='*.egg-info' --exclude='*.pkl'
+          --exclude='*.log*' --exclude='custom_vendor' --exclude='*.csv'
+          --exclude='checkpoints' --exclude='log' --exclude='ddpg_her' --exclude='auto_drac'
+          --exclude='dex_analysis' --exclude='sd3' --exclude='td3_vanilla_rff' --exclude='ppo'
+          --exclude='her_analysis' --exclude='drqv2_invariance' --exclude='rad' --exclude='tools'
+        compress: true
+      - !mounts.SSHCode
+        local_path: "$HOME/.gce"
+        host_path: "$HOME/.gce"
+        file_mask: "$USER-improbable-gs-service.json"
+        compress: true
+    runner: !runners.Slurm
+      envs: >-
+        LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US
+        LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin
+        LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200_linux/bin
+        ML_LOGGER_BUCKET=gs://ge-data-improbable
+        GOOGLE_APPLICATION_CREDENTIALS=$HOME/.gce/{env.USER}-improbable-gs-service.json
+      setup: |
+        source /etc/profile.d/modules.sh
+        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/gridsan/aajay/.mujoco/mjpro150/bin
+        source $HOME/.bashrc
+        module load cuda/10.2
+        module load anaconda/2021b
+        source $HOME/proxy.sh
+      startup: >-
+        echo "copying mujoco-py";
+        mkdir -p /state/partition1/user/$USER;
+        cp -r /home/gridsan/$USER/mujoco-py /state/partition1/user/$USER/;
+        echo "finished";
+        export MUJOCO_GL=egl;
+        export CUDA_VISIBLE_DEVICES=0;
+      pypath: "{mounts[0].host_path}"
+      work_dir: "{mounts[0].host_path}"
+      # exclude: d-7-11-2,d-10-1-2
+      # time_limit: "0:0:20"
+      mem: 32000
+      n_cpu: 20
+      n_gpu: volta:1
+      exclude: d-8-16-2
+    launch: !ENV
+      type: ssh
+      ip: "{env.JYNS_SLURM_HOST}"
+      username: "{env.JYNS_USERNAME}"
+      pem: "{env.JYNS_SLURM_PEM}"
+  visiongpu-docker:
+    mounts:
+      - !mounts.S3Code
+        <<: *model-free_code
+        host_path: "$NFS_PATH/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
+        remote_tar: "$NFS_PATH/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
+    runner:
+      !runners.Docker
+      <<: *docker-runner
+      setup: |
+        docker login --username improbableailab --password 6596fb63-286c-40be-9d9c-9004f6f4074e
+        chmod -R 777 $NFS_PATH/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free
+    launch: !ENV
+      type: ssh
+      ip: "{secret.JYNS_SSH_IP}"
+      username: "{secret.JYNS_USERNAME}"
+      password: "{secret.JYNS_PASSWORD}"
+      root_config: "source $HOME/public/.bashrc"
+      launch_dir: "$NFS_PATH/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
+  ec2:
+    verbose: true
+    mounts:
+      - !mounts.S3Code
+        <<: *model-free_code
+        host_path: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
+        remote_tar: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
+    runner: !runners.Docker
+      <<: *docker-runner
+      setup: |
+        docker login --username improbableailab --password 6596fb63-286c-40be-9d9c-9004f6f4074e
+        chmod -R 777 /home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free
+    launch: !ENV &ec2-launch
+      # use AWS_PROFILE to select the access key and access .secret
+      # post a feature request under issues, if you want more ways to customize this.
+      type: ec2
+      region: us-west-2
+      availability_zone: us-west-2a
+      image_id: ami-0cf77af10d63c7969
+      iam_instance_profile_arn: "{env.JYNS_AWS_INSTANCE_PROFILE}"
+      security_group: "{env.USER}-jaynes-sg"
+      instance_type: g4dn.xlarge
+      key_name: "{env.USER}-us-west-2"
+      spot_price: 0.6
+      terminate_after: true
+      launch_dir: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
+  ec2-gen:
+    mounts:
+      - !mounts.S3Code
+        <<: *model-free_code
+        host_path: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
+        remote_tar: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
+      - !mounts.S3Code
+        prefix: "s3://{env.JYNS_AWS_S3_BUCKET}/.aws"
+        local_path: "$HOME/.aws"
+        container_path: /root/.aws
+        compress: true
+      - !mounts.Host
+        host_path: "/tmp"
+        container_path: /root/tmpdir
+    runner: !runners.Docker
+      <<: *docker-runner
+      name: "model-free-gen"  # only for docker
+      image: "improbableailab/model-free-gen:latest"
+      setup: |
+        rm -rf /home/ec2-user/anaconda3
+        docker login --username improbableailab --password 6596fb63-286c-40be-9d9c-9004f6f4074e
+        chmod -R 777 /home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free
+      envs: "LANG=utf-8 TMPDIR=/root/tmpdir SNAPSHOT_ROOT=s3://ge-data-improbable/drqv2_invariance ML_LOGGER_ROOT=http://44.241.150.228:8080 ML_LOGGER_USER=takuma ML_LOGGER_TOKEN='' ML_LOGGER_BUCKET=gs://ge-data-improbable"
+    launch: !ENV
+      <<: *ec2-launch
+      block_device_mappings: [ { "DeviceName": "/dev/sda1","Ebs": { "VolumeSize": 80 } } ]
+      # use AWS_PROFILE to select the access key and access .secret
+      # post a feature request under issues, if you want more ways to customize this.
+      type: ec2
+      availability_zone: us-east-1a
+      region: us-east-1
+      image_id: ami-01f1817a8a0c23c2e
+      key_name: "{env.USER}-us-east-1"
+      iam_instance_profile_arn: "{env.JYNS_AWS_INSTANCE_PROFILE}"
+      security_group: "{env.USER}-jaynes-sg"
+      instance_type: g4dn.4xlarge
+      spot_price: 0.6
+      launch_dir: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
+      terminate_after: true
+  gcp: &gcp-launch
+    mounts:
+      - !mounts.GSCode
+        <<: *model-free_code
+        prefix: "gs://{env.JYNS_GS_BUCKET}/model-free"
+        host_path: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
+        remote_tar: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
+      - !mounts.GSCode
+        prefix: "gs://{env.JYNS_GS_BUCKET}/.gce"
+        local_path: "$HOME/.gce"
+        host_path: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/.gce"
+        file_mask: "$USER-improbable-gs-service.json"
+        container_path: /.gce
+        compress: true
+    runner: !runners.Docker
+      <<: *docker-runner
+      envs: >-
+        LANG=utf-8 ML_LOGGER_BUCKET=gs://ge-data-improbable
+        GOOGLE_APPLICATION_CREDENTIALS=$HOME/.gce/{env.USER}-improbable-gs-service.json
+      setup: |
+        docker login --username improbableailab --password 6596fb63-286c-40be-9d9c-9004f6f4074e
+        chmod -R 777 $HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}
+        sleep 60
+    launch: !ENV
+      # Needed for the S3 code mount
+      setup: |
+        pip install -q awscli ml-logger params-proto
+      type: gce
+      launch_dir: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
+      project_id: "{env.JYNS_GCP_PROJECT}"
+      zone: europe-west4-b
+      image_project: deeplearning-platform-release
+      image_family: pytorch-latest-gpu
+      boot_size: 100
+      instance_type: n1-standard-16
+      accelerator_type: nvidia-tesla-t4
+      accelerator_count: 1
+      preemptible: true
+      terminate_after: true
+      tags:
+        install-nvidia-driver: 'True'
+  tticbirch:
+    mounts:
+      - !mounts.SSHCode
+        local_path: "$HOME/.mujoco"
+        host_path: "/tmp/.mujoco"
+        container_path: /root/.mujoco/secret_key
+        compress: true
+      - !mounts.SSHCode
+        local_path: "$HOME/.aws"
+        host_path: "/tmp/.aws"
+        container_path: /root/.aws
+        compress: true
+      - !mounts.SSHCode
+        local_path: .
+        # host_path: $JYNMNT/latent-planning/latent-planning
+        local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model_free.tar
+        host_path: "/home/takuma/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model_free"
+        remote_tar: "/home/takuma/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model_free.tar"
+        container_path: "/root/{now:%H%M%S.%f}-model-free_private"
+        pypath: true
+        excludes: >-
+          --exclude='data' --exclude='samples' --exclude='images' --exclude='videos'
+          --exclude='figures' --exclude='results' --exclude='analysis' --exclude='*.ipynb'
+          --exclude='*__pycache__' --exclude='*.git' --exclude='*.png' --exclude='*.gif'
+          --exclude='*.mp4' --exclude='*.idea' --exclude='*.egg-info' --exclude='*.pkl'
+          --exclude='*.log*'
+        compress: true
+    runner:
+      !runners.Docker
+      image: "takumaynd/model-free-gen-birch"
+      pypath: "{mounts[2].container_path}"
+      work_dir: "{mounts[2].container_path}"
+      ipc: host
+      gpus: "all"
+      envs: "LANG=utf-8 TMPDIR=/tmp SNAPSHOT_DIR=/tmp/snapshots SNAPSHOT_ROOT=gs://ge-data-improbable/drqv2_invariance ML_LOGGER_ROOT=http://44.241.150.228:8080 ML_LOGGER_USER=takuma ML_LOGGER_TOKEN='' ML_LOGGER_BUCKET=gs://ge-data-improbable CUDA_VISIBLE_DEVICES=2 EGL_DEVICE_ID=0"  # Overwrite the ENV of Dockerfile
+      # NOTE: There seem to be no way to specify multiple env vars for a docker...
+      # envs keyword only specifies envvars of the host machine.
+    launch: !ENV
+      type: ssh
+      ip: "birch.ttic.edu"
+      username: "{env.JYNS_USERNAME}"
+      pem: "{env.JYNS_SLURM_PEM}"
+  tticslurm:
+    mounts: # mount configurations Available keys: NOW, UUID,
+      - !mounts.SSHCode &code_mount
+        local_path: .
+        # host_path: $JYNMNT/latent-planning/latent-planning
+        local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free.tar
+        host_path: "{env.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free"
+        remote_tar: "{env.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free.tar"
+        pypath: true
+        excludes: >-
+          --exclude='data' --exclude='samples' --exclude='images' --exclude='videos'
+          --exclude='figures' --exclude='results' --exclude='analysis' --exclude='*.ipynb'
+          --exclude='*__pycache__' --exclude='*.git' --exclude='*.png' --exclude='*.gif'
+          --exclude='*.mp4' --exclude='*.idea' --exclude='*.egg-info' --exclude='*.pkl'
+          --exclude='*.log*'
+        compress: true
+    runner: !runners.Slurm &slurm
+      envs: >-
+        LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US
+      setup: |
+        # source /etc/profile.d/modules.sh
+        source ~/.bashrc  # without tty, it is not loaded automatically
+        # Settings to use pipenv
+        PROJECT_ROOT=/share/data/ripl/takuma/workspace/model-free_private_pipfile/
+        export PIPENV_PIPFILE=$PROJECT_ROOT/Pipfile
+        export PIPENV_DOTENV_LOCATION=$PROJECT_ROOT/.env
+        # export TMPDIR=/share/data/ripl/takuma/snapshots
+
+        # pipenv shell
+        # conda activate drqv2
+        # module load cuda/10.2
+        # module load anaconda/2021a
+        # source ~/proxy.sh
+      shell: "bash"
+      # startup: >-
+      # pip install --user jaynes -q
+      # pip install --user ml-logger==0.7.11 -q
+      entry_script: "pipenv run python -u -m jaynes.entry"
+      pypath: "{mounts[0].host_path}"
+      work_dir: "{mounts[0].host_path}"
+      partition: "ripl-gpu" # not clear what the partition is like
+      time_limit: "04:00:00"  # 4 hours is the maximum limit
+      n_cpu: 1
+      # n_gpu: "2080ti:1"  # --gres option doesn't work on ttic slurm
+      constraint: "highmem"
+      n_seq_jobs: 1
+      interactive: true
+      # mail-type: "FAIL"
+    launch: !ENV
+      type: ssh
+      ip: "{env.JYNS_SLURM_HOST}"
+      username: "{env.JYNS_USERNAME}"
+      pem: "{env.JYNS_SLURM_PEM}"
+  gcp-gen:
+    mounts:
+      - !mounts.GSCode
+        <<: *model-free_code
+        prefix: "gs://{env.JYNS_AWS_S3_BUCKET}/model-free"
+        host_path: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
+        remote_tar: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
+    #      - !mounts.Host
+    #        host_path: "$HOME/places365standard"
+    #        container_path: /root/datasets/places365standard
+    runner: !runners.Docker
+      <<: *docker-runner
+      name: "model-free-gen"  # only for docker
+      image: "improbableailab/model-free-gen:latest"
+      envs: >-
+        LANG=utf-8
+        PLACES_DATASET_PATH=/root/datasets/places365_standard
+        AWS_ACCESS_KEY_ID=AKIA5DLMETXBVGUGQEW6
+        AWS_SECRET_ACCESS_KEY=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
+        SLACK_WEBHOOK_URL=https://hooks.slack.com/services/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
+      setup: |
+        pip install -q awscli ml-logger params-proto
+        docker login --username improbableailab --password 6596fb63-286c-40be-9d9c-9004f6f4074e
+        chmod -R 777 $HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free
+      # post_script: sleep 7200
+    launch: !ENV
+      # Needed for the S3 code mount
+      #  /opt/conda/bin/conda activate
+      #  pip install -q awscli
+      # Needed for places dataset
+      #  cd $JAYNES_LAUNCH_DIR
+      #  gsutil cp gs://ge-data-improbable/datasets/places365standard_easyformat.tar places365standard_easyformat.tar
+      #  tar -xvf places365standard_easyformat.tar
+      #  rm places365standard_easyformat.tar
+      setup: |
+        sudo resize2fs /dev/sda1
+        chmod -R 777 $JAYNES_LAUNCH_DIR
+        sleep 60
+      type: gce
+      launch_dir: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
+      project_id: "{env.JYNS_GCP_PROJECT}"
+      zone: europe-west4-b
+      image_project: deeplearning-platform-release
+      image_family: pytorch-latest-gpu
+      boot_size: 200
+      # instance_type: a2-highgpu-1g
+      instance_type: n1-standard-8
+      accelerator_type: nvidia-tesla-t4
+      accelerator_count: 1
+      preemptible: true
+      terminate_after: true
+      tags:
+        install-nvidia-driver: True
+run:
+  *supercloud
