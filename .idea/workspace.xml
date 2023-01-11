@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="747d7698-6344-489c-b921-4dec3e2e3948" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/actor_scale_ablate.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/actor_scale_ablate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/actor_scale_ablate/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/actor_scale_ablate/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/cnn_lff/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/fourier_feat_sensitivity.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/fourier_feat_sensitivity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/fourier_feat_sensitivity/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/fourier_feat_sensitivity/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_actor_delay.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_actor_delay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_actor_delay/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_actor_delay/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_actor_delay/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_actor_delay/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_less_compute.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_less_compute.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_less_compute/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_less_compute/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_less_compute/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/lff_less_compute/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/matplotlibrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Finger-spin.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Finger-spin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Walker-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff/Walker-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Finger-spin.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Finger-spin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Walker-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_lff_tgt/Walker-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_more_compute.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_more_compute.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_more_compute/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_more_compute/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_more_compute/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/mlp_more_compute/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/rff_actor_critic_ablate.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/rff_actor_critic_ablate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/rff_actor_critic_ablate/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/rff_actor_critic_ablate/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/rff_actor_critic_ablate/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/rff_actor_critic_ablate/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/scale_sensitivity.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/scale_sensitivity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/scale_sensitivity/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/scale_sensitivity/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/scale_sensitivity/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/scale_sensitivity/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Finger-spin.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Finger-spin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Walker-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error/Walker-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/value_estimation_error_tgt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_W/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/rff_camera_ready/weight_diff_bias/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/debug.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/debug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff_no_tgt.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff_no_tgt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp_no_tgt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp_no_tgt.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp_no_tgt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/mlp.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/mlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/mlp.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/mlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/matplotlibrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_analysis.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_analysis/Quadruped-run-v1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_actor_delay.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_actor_delay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_actor_delay/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_actor_delay/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_actor_delay/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_actor_delay/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_alpha_tune.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_alpha_tune.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_alpha_tune/Walker-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_alpha_tune/Walker-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_less_compute.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_less_compute.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_less_compute/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_less_compute/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_less_compute/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_less_compute/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_no_tgt.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_no_tgt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_no_tgt/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/mlp_lff_no_tgt/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/analyze_overestimation_tgt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/eval_policy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/matplotlibrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/mlp.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/mlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/no_target/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/no_target/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/analyze_rank/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/eval_rank.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/matplotlibrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Acrobot-swingup.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Acrobot-swingup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Cheetah-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Cheetah-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Finger-turn_hard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Finger-turn_hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Hopper-hop.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Hopper-hop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Humanoid-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Humanoid-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Quadruped-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Quadruped-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Quadruped-walk.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Quadruped-walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Walker-run.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/weight_diff/Walker-run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/lff.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/lff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/mlp.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/mlp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drqv2_rff/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drqv2_rff/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drqv2_rff/drqv2_rff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drqv2_rff/replay_buffer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drqv2_rff/utils.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JKZyqchTPAQHyFluOJ3Uq0hdLu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="747d7698-6344-489c-b921-4dec3e2e3948" name="Changes" comment="" />
+      <created>1671828993258</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671828993258</updated>
+      <workItem from="1671828996013" duration="380000" />
+      <workItem from="1671830990844" duration="694000" />
+      <workItem from="1673399089032" duration="1766000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

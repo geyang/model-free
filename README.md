@@ -1,9 +1,15 @@
 # Model-free RL Baselines
 
 
-This codebase combines DrQv2, PPO, and RFF-DrQ into a single codebase
+This codebase combines DrQv2, PPO, and RFF-DrQ into a single codebase. DrQ is closer to SAC, whereas DrQv2 is DDPG plus tricks from TD3. Both were originally implemented for control-from-pixels. On state space, DrQ works better than DrQv2 because the noise helps with exploration. Denis' state-space SAC implementation is the SOTA, and is better than either DrQ and DrQv2 on state-space DeepMind control tasks.
 
- 
+Therefore, for state-space control tasks, you want to start with sac_denis_rff. We actually want a clean version of `sac_denis` without the rff stuff, but that's not implemented yet.
+
+**On-policy methods**  policy gradient methods usually have faster wall-clock time that actor-critic methods. For Isaac gym environments, we use PPO because the fast sampling performance makes it less important to be sample efficient (the actor-critic SOTA results evaluate sample-efficiency, NOT wall-clock time). Even so, it is known that sample-efficient SAC implementations with Isaac Gym can improve the wall-clock time upon PPO by about 20% - 30%, depending on the domain.
+
+For this reason we want to also add an SAC + Isaac Gym implementation. Currently, very few work in locomotion look at off-policy methods. HER is completely missing. The few exceptions are
+- Jason Peng's goal shooting paper, which uses an off-policy algorithm for the high-level policy
+- Ilya Kostrikov's learning-in-the-real-world paper -- Sergey Levine commented the main reason such complicated algorithm worked on the robot is that Ilya is the person who implemented it. 
 
 ## Algorithms
 
