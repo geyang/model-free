@@ -32,7 +32,7 @@ if __name__ == '__main__':
             #
             #     if status != 'completed':
             logger.print(RUN.prefix, color='green')
-            checkpoint_root = "gs://ge-data-improbable/checkpoints"
+            checkpoint_root = "gs://your-gs-bucket"
 
             kwargs = {'Args.env_name': f'dmc:{env_name}-v1',
                       'Args.checkpoint_root': checkpoint_root,

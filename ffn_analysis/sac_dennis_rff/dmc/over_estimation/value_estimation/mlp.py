@@ -1,13 +1,13 @@
 from pathlib import Path
 
-from params_proto.neo_hyper import Sweep
+from params_proto.hyper import Sweep
 
 from sac_dennis_rff.config import Args, Actor, Critic, Agent
-from model_free_analysis import RUN
+from ffn_analysis import RUN
 
 with Sweep(RUN, Args, Actor, Critic, Agent) as sweep:
     Args.dmc = True
-    Args.checkpoint_root = "gs://ge-data-improbable/checkpoints"
+    Args.checkpoint_root = "gs://your-gs-bucket"
     Args.save_final_replay_buffer = True
     Args.collect_value_estimate = True
     Args.value_estimate_k = 1500

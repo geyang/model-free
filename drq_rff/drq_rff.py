@@ -14,7 +14,7 @@ from . import utils
 from rff_kernels import models
 from .replay_buffer import ReplayBuffer
 from .config import Args, Encoder, Actor, Critic, Agent
-from params_proto.neo_proto import PrefixProto
+from params_proto import PrefixProto
 
 
 class Progress(PrefixProto, cli=False):

@@ -5,7 +5,7 @@ from warnings import filterwarnings  # noqa
 
 import numpy as np
 import torch
-from params_proto.neo_proto import PrefixProto
+from params_proto import PrefixProto
 
 from drqv2.replay_buffer import Replay
 from . import utils

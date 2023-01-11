@@ -1,6 +1,6 @@
 import torch
 
-from params_proto.neo_proto import ParamsProto, PrefixProto
+from params_proto import ParamsProto, PrefixProto
 
 
 class Args(ParamsProto):

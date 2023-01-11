@@ -1,7 +1,7 @@
 import gym
 import numpy as np
 import torch
-from params_proto.neo_proto import PrefixProto
+from params_proto import PrefixProto
 from tqdm import tqdm
 
 from .config import Args
