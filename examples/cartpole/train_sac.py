@@ -6,7 +6,7 @@ if __name__ == '__main__':
     from sac_dennis_rff.config import Args, Actor, Critic, Agent
     from params_proto.hyper import Sweep
 
-    sweep = Sweep(RUN, Args, Actor, Critic, Agent).load("sweep.jsonl")
+    sweep = Sweep(RUN, Args, Actor, Critic, Agent).load("sweep_sac.jsonl")
     jaynes.config('supercloud-tg', verbose=True)
     for i, kwargs in enumerate(sweep):
         # RUN.job_name = f"{{now:%H.%M.%S}}/{Args.env_name.split(':')[-1][:-3]}/{Args.seed}"
