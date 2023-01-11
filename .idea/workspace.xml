@@ -4,71 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747d7698-6344-489c-b921-4dec3e2e3948" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drq/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/drq/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drq_rff/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/drq_rff/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drq_rff/drq_rff.py" beforeDir="false" afterPath="$PROJECT_DIR$/drq_rff/drq_rff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drqv2/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/drqv2/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drqv2/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/drqv2/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/debug.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/debug.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/debug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff_no_tgt.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff_no_tgt.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff_no_tgt.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/lff_no_tgt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp_no_tgt.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/mlp_no_tgt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/2_layer/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp_no_tgt.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp_no_tgt.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp_no_tgt.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/mlp_no_tgt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/3_layer/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/mlp.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/mlp.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/mlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/mlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_delay/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/actor_scale_ablate/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/mlp.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/mlp.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/mlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/mlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/compute/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/fourier_feat_ablate/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/eval_policy.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/eval_policy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/mlp.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/mlp.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/mlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/mlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/no_target/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/no_target/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/no_target/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/no_target/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/over_estimation/value_estimation/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/eval_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rank/eval_rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/rff_actor_critic_ablate/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/lff.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/lff.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/lff.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/lff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/mlp.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/mlp.jsonl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/mlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/mlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ffn_analysis/sac_dennis_rff/dmc/wall_time/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ppo/a2c_ppo_acktr/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/ppo/a2c_ppo_acktr/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sac_dennis_rff/calculate_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/sac_dennis_rff/calculate_rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sac_dennis_rff/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/sac_dennis_rff/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sac_dennis_rff/over_estimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/sac_dennis_rff/over_estimation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sac_dennis_rff/sac.py" beforeDir="false" afterPath="$PROJECT_DIR$/sac_dennis_rff/sac.py" afterDir="false" />
-    </list>
+    <list default="true" id="747d7698-6344-489c-b921-4dec3e2e3948" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -226,7 +173,7 @@
       <updated>1671828993258</updated>
       <workItem from="1671828996013" duration="380000" />
       <workItem from="1671830990844" duration="694000" />
-      <workItem from="1673399089032" duration="2705000" />
+      <workItem from="1673399089032" duration="3053000" />
     </task>
     <servers />
   </component>
