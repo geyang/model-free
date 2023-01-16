@@ -314,9 +314,10 @@ def train(**deps):
     from .replay_buffer import ReplayBuffer
     from ml_logger import logger
 
-    Args._update(**deps)
+    Args._update(deps)
+    Agent._update(deps)
 
-    logger.log_params(Args=vars(Args))
+    logger.log_params(Args=vars(Args), Agent=vars(Agent))
     logger.remove('metrics.pkl')
     logger.log_text("""
         charts:

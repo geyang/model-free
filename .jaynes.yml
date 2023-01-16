@@ -1,7 +1,7 @@
 version: 0
 mounts:
   - &model-free_code
-    prefix: "s3://{seceret.JYNS_AWS_S3_BUCKET}/model-free"
+    prefix: "s3://{secret.JYNS_AWS_S3_BUCKET}/model-free"
     local_path: .
     pypath: true
     excludes: >-
@@ -28,8 +28,8 @@ modes:
       - !mounts.SSHCode
         local_path: .
         local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free.tar
-        host_path: "{seceret.JYNS_SLURM_DIR}/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
-        remote_tar: "{seceret.JYNS_SLURM_DIR}/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free.tar"
+        host_path: "{secret.JYNS_SLURM_DIR}/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
+        remote_tar: "{secret.JYNS_SLURM_DIR}/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free.tar"
         pypath: true
         excludes: >-
           --exclude='data' --exclude='samples' --exclude='images' --exclude='videos'
@@ -52,7 +52,7 @@ modes:
         LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200/bin
         LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco200_linux/bin
         ML_LOGGER_BUCKET=gs://ge-data-improbable
-        GOOGLE_APPLICATION_CREDENTIALS=$HOME/.gce/{seceret.USER}-improbable-gs-service.json
+        GOOGLE_APPLICATION_CREDENTIALS=$HOME/.gce/{secret.USER}-improbable-gs-service.json
       setup: |
         source /etc/profile.d/modules.sh
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/gridsan/aajay/.mujoco/mjpro150/bin
@@ -77,9 +77,9 @@ modes:
       exclude: d-8-16-2
     launch: !ENV
       type: ssh
-      ip: "{seceret.JYNS_SLURM_HOST}"
-      username: "{seceret.JYNS_USERNAME}"
-      pem: "{seceret.JYNS_SLURM_PEM}"
+      ip: "{secret.JYNS_SLURM_HOST}"
+      username: "{secret.JYNS_USERNAME}"
+      pem: "{secret.JYNS_SLURM_PEM}"
   visiongpu-docker:
     mounts:
       - !mounts.S3Code
@@ -118,10 +118,10 @@ modes:
       region: us-west-2
       availability_zone: us-west-2a
       image_id: ami-0cf77af10d63c7969
-      iam_instance_profile_arn: "{seceret.JYNS_AWS_INSTANCE_PROFILE}"
-      security_group: "{seceret.USER}-jaynes-sg"
+      iam_instance_profile_arn: "{secret.JYNS_AWS_INSTANCE_PROFILE}"
+      security_group: "{secret.USER}-jaynes-sg"
       instance_type: g4dn.xlarge
-      key_name: "{seceret.USER}-us-west-2"
+      key_name: "{secret.USER}-us-west-2"
       spot_price: 0.6
       terminate_after: true
       launch_dir: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
@@ -132,7 +132,7 @@ modes:
         host_path: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
         remote_tar: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
       - !mounts.S3Code
-        prefix: "s3://{seceret.JYNS_AWS_S3_BUCKET}/.aws"
+        prefix: "s3://{secret.JYNS_AWS_S3_BUCKET}/.aws"
         local_path: "$HOME/.aws"
         container_path: /root/.aws
         compress: true
@@ -157,9 +157,9 @@ modes:
       availability_zone: us-east-1a
       region: us-east-1
       image_id: ami-01f1817a8a0c23c2e
-      key_name: "{seceret.USER}-us-east-1"
-      iam_instance_profile_arn: "{seceret.JYNS_AWS_INSTANCE_PROFILE}"
-      security_group: "{seceret.USER}-jaynes-sg"
+      key_name: "{secret.USER}-us-east-1"
+      iam_instance_profile_arn: "{secret.JYNS_AWS_INSTANCE_PROFILE}"
+      security_group: "{secret.USER}-jaynes-sg"
       instance_type: g4dn.4xlarge
       spot_price: 0.6
       launch_dir: "/home/ec2-user/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
@@ -168,11 +168,11 @@ modes:
     mounts:
       - !mounts.GSCode
         <<: *model-free_code
-        prefix: "gs://{seceret.JYNS_GS_BUCKET}/model-free"
+        prefix: "gs://{secret.JYNS_GS_BUCKET}/model-free"
         host_path: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
         remote_tar: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
       - !mounts.GSCode
-        prefix: "gs://{seceret.JYNS_GS_BUCKET}/.gce"
+        prefix: "gs://{secret.JYNS_GS_BUCKET}/.gce"
         local_path: "$HOME/.gce"
         host_path: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/.gce"
         file_mask: "$USER-improbable-gs-service.json"
@@ -182,7 +182,7 @@ modes:
       <<: *docker-runner
       envs: >-
         LANG=utf-8 ML_LOGGER_BUCKET=gs://ge-data-improbable
-        GOOGLE_APPLICATION_CREDENTIALS=$HOME/.gce/{seceret.USER}-improbable-gs-service.json
+        GOOGLE_APPLICATION_CREDENTIALS=$HOME/.gce/{secret.USER}-improbable-gs-service.json
       setup: |
         docker login --username improbableailab --password 6596fb63-286c-40be-9d9c-9004f6f4074e
         chmod -R 777 $HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}
@@ -193,7 +193,7 @@ modes:
         pip install -q awscli ml-logger params-proto
       type: gce
       launch_dir: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
-      project_id: "{seceret.JYNS_GCP_PROJECT}"
+      project_id: "{secret.JYNS_GCP_PROJECT}"
       zone: europe-west4-b
       image_project: deeplearning-platform-release
       image_family: pytorch-latest-gpu
@@ -245,16 +245,16 @@ modes:
     launch: !ENV
       type: ssh
       ip: "birch.ttic.edu"
-      username: "{seceret.JYNS_USERNAME}"
-      pem: "{seceret.JYNS_SLURM_PEM}"
+      username: "{secret.JYNS_USERNAME}"
+      pem: "{secret.JYNS_SLURM_PEM}"
   tticslurm:
     mounts: # mount configurations Available keys: NOW, UUID,
       - !mounts.SSHCode &code_mount
         local_path: .
         # host_path: $JYNMNT/latent-planning/latent-planning
         local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free.tar
-        host_path: "{seceret.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free"
-        remote_tar: "{seceret.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free.tar"
+        host_path: "{secret.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free"
+        remote_tar: "{secret.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-model-free.tar"
         pypath: true
         excludes: >-
           --exclude='data' --exclude='samples' --exclude='images' --exclude='videos'
@@ -297,14 +297,14 @@ modes:
       # mail-type: "FAIL"
     launch: !ENV
       type: ssh
-      ip: "{seceret.JYNS_SLURM_HOST}"
-      username: "{seceret.JYNS_USERNAME}"
-      pem: "{seceret.JYNS_SLURM_PEM}"
+      ip: "{secret.JYNS_SLURM_HOST}"
+      username: "{secret.JYNS_USERNAME}"
+      pem: "{secret.JYNS_SLURM_PEM}"
   gcp-gen:
     mounts:
       - !mounts.GSCode
         <<: *model-free_code
-        prefix: "gs://{seceret.JYNS_AWS_S3_BUCKET}/model-free"
+        prefix: "gs://{secret.JYNS_AWS_S3_BUCKET}/model-free"
         host_path: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/model-free"
         remote_tar: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}/"
     #      - !mounts.Host
@@ -340,7 +340,7 @@ modes:
         sleep 60
       type: gce
       launch_dir: "$HOME/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
-      project_id: "{seceret.JYNS_GCP_PROJECT}"
+      project_id: "{secret.JYNS_GCP_PROJECT}"
       zone: europe-west4-b
       image_project: deeplearning-platform-release
       image_family: pytorch-latest-gpu
@@ -353,5 +353,122 @@ modes:
       terminate_after: true
       tags:
         install-nvidia-driver: True
+  tjlab-gpu:
+    mounts:
+      - !mounts.SSHCode
+        local_path: .
+        local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes-demo.tar
+        host_path: "{secret.JYNS_HOME}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes-mount"
+        remote_tar: "{secret.JYNS_HOME}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes-mount.tar"
+        pypath: true
+        excludes: >-
+          --exclude='*__pycache__' --exclude='*.git' --exclude='*.idea' --exclude='*.egg-info' --exclude='*.pkl'
+          --exclude='screenshots' --exclude='scripts' --exclude='docker' --exclude='*.png'
+          --exclude='private' --exclude='.secrete' --exclude='*.png' --exclude='*.pdf'
+        compress: true
+    runner:
+      !runners.Simple
+      name: "jaynes-ssh-{now:%H%M%S}-{RUN.count}"
+      entry_script: "screen -dm python -u -m jaynes.entry"
+      setup: |
+        . $HOME/.bashrc
+        conda activate diffuser
+        echo running inside `hostname`
+      envs: >-
+        LANG=utf-8
+        LC_CTYPE=en_US.UTF-8
+        LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+        D4RL_DATASET_DIR=/data/scratch/timur/dataset/d4rl
+        DATASET_ROOT=/data/scratch/$USER/dataset
+        PYTHONPATH=`which python`:$PYTHONPATH
+      pypath: "{mounts[0].host_path}"
+      work_dir: "{mounts[0].host_path}"
+    launch: !ENV
+      type: ssh
+      ip: "karhu.csail.mit.edu"
+      username: "{secret.JYNS_USERNAME}"
+      password: "{secret.JYNS_PASSWORD}"
+      launch_dir: "{secret.JYNS_HOME}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
+
+  tjlab-gpu-docker:
+    mounts:
+      - !mounts.SSHCode
+        local_path: .
+        local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes-demo.tar
+        host_path: "{secret.JYNS_HOME}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes-mount"
+        remote_tar: "{secret.JYNS_HOME}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes-mount.tar"
+        pypath: true
+        excludes: >-
+          --exclude='*__pycache__' --exclude='*.git' --exclude='*.idea' --exclude='*.egg-info' --exclude='*.pkl'
+          --exclude='screenshots' --exclude='scripts' --exclude='docker' --exclude='*.png'
+          --exclude='private' --exclude='.secrete' --exclude='*.png' --exclude='*.pdf'
+        compress: true
+    runner:
+      !runners.Docker
+      name: "jaynes-docker-{now:%H%M%S}-{RUN.count}"
+      image: timgaripov/rl_diffuser:latest
+      setup: |
+        # export PATH=/usr/local/bin/:$PATH  # this is needed on mac osx hosts.
+        echo `which docker`
+      envs: LANG=utf-8
+      pypath: "{mounts[0].container_path}"
+      work_dir: "{mounts[0].container_path}"
+      ipc: host
+      gpus: all
+    launch: !ENV
+      type: ssh
+      ip: "karhu.csail.mit.edu"
+      username: "{secret.JYNS_USERNAME}"
+      password: "{secret.JYNS_PASSWORD}"
+      launch_dir: "{secret.JYNS_HOME}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
+  supercloud-tg:
+    mounts: # mount configurations Available keys: NOW, UUID,
+      - !mounts.SSHCode
+        local_path: .
+        # host_path: $JYNMNT/latent-planning/latent-planning
+        local_tar: /tmp/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes-demo.tar
+        host_path: "{secret.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes_mount"
+        remote_tar: "{secret.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}-jaynes_mount.tar"
+        pypath: true
+        excludes: >-
+          --exclude='data' --exclude='samples' --exclude='images' --exclude='videos'
+          --exclude='figures' --exclude='results' --exclude='analysis' --exclude='*.ipynb'
+          --exclude='*__pycache__' --exclude='*.git' --exclude='*.png' --exclude='*.gif'
+          --exclude='*.mp4' --exclude='*.idea' --exclude='*.egg-info' --exclude='*.pkl'
+          --exclude='*.log*'
+        compress: true
+    runner: !runners.Slurm
+      envs: >-
+        LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US
+        MUJOCO_GL=egl
+        LD_PRELOAD=$HOME/vendor/glew/lib/libGLEW.so.2.2.0:/usr/lib/x86_64-linux-gnu/libEGL.so
+        D4RL_DATASET_DIR=/state/partition1/user/$USER/d4rl
+      setup: |
+        source /etc/profile.d/modules.sh
+        source $HOME/.bashrc
+        module load anaconda/2022b
+        source ~/proxy.env
+      startup: >-
+        pip install --user jaynes -q;
+        mkdir -p /state/partition1/user/$USER;
+        echo "creating d4rl folder on temporary partition";
+        mkdir -p /state/partition1/user/$USER/d4rl;
+        echo "!!!Important!!! make sure we are not downloading big datasets";
+        echo "copying mujoco-py";
+        cp -r /home/gridsan/$USER/mujoco-py /state/partition1/user/$USER/;
+        echo "finished";
+      pypath: "{mounts[0].host_path}"
+      work_dir: "{mounts[0].host_path}"
+      # partition: normal # not clear what the partition is like
+      time_limit: "7-00:00:00"
+      n_cpu: 20
+      n_gpu: "volta:1"
+      interactive: true
+    launch: !ENV
+      type: ssh
+      ip: "{secret.JYNS_SLURM_HOST}"
+      username: "{secret.JYNS_SLURM_USERNAME}"
+      pem: "{secret.JYNS_SLURM_PEM}"
+      launch_dir: "{secret.JYNS_SLURM_DIR}/jaynes-mounts/{now:%Y-%m-%d}/{now:%H%M%S.%f}"
 run:
   *supercloud
